@@ -3,7 +3,7 @@
 DeadCell::DeadCell(int x, int y){
     Cell::Cell(x, y);
 }
-DeadCell::CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int longueur, int largeur){
+bool DeadCell::CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int longueur, int largeur){
     int aliveNeighbours=0;
     for (int i=-1; i<=1; i++){
         int nx=x+i;
