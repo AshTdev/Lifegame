@@ -1,7 +1,8 @@
+
 #ifndef CELL
 #define CELL
 
-class Cell(){
+class Cell{
     protected:
     int x;
     int y;
