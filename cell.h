@@ -1,4 +1,3 @@
-
 #ifndef CELL
 #define CELL
 
