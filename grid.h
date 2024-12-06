@@ -10,8 +10,7 @@ class Grid{
     int Height;
     std::vector<std::vector<Cell*>> Cells;
     public:
-    Grid(int Width, int Height);
-    void Initialization();
+    Grid(string nom_fichier);
 }
 
 #endif
