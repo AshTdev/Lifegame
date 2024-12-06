@@ -7,7 +7,7 @@ Cell::Cell(int x, int y){
 }
 
 bool Cell::PrepareChange(){
-    Change = !Change;
+    Change = true;
     return true;
 }
 
