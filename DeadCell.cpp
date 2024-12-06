@@ -1,11 +1,14 @@
 #include "DeadCell.h"
 #include "AliveCell.h"
+#include <iostream>
+using namespace std;
 
 DeadCell::DeadCell(int x, int y) : Cell(x, y) {
 
 }
 
 bool DeadCell::CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int longueur, int largeur) {
+    cout << "Théo3" << endl;
     int aliveNeighbours = 0;
     for (int i = -1; i <= 1; i++) {
         int nx = x + i;
@@ -27,5 +30,5 @@ bool DeadCell::CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int longu
      {
         return false;
     };
+}
 
-    
