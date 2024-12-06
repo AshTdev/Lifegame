@@ -14,7 +14,7 @@ Grid::Grid(string nom_fichier){
     int number;
     while (getline(fichier, line)){
         j=0;
-        istringstream linestream(line);
+        istringstream linestream(line); // Voir comment ça marche
         while (linestream >> word){
                  
                 number=stoi(word);
@@ -35,5 +35,23 @@ Grid::Grid(string nom_fichier){
             j++;
 
         }i++;
+    }
+}
+bool Grid::Iteration(){
+    for(int i=0;i<Height;i++){
+        for (int j=0;j<Width;j++){
+                Cells[i][j]->CheckNeighbours(Cells, Width, Height);
+        }}
+    for(int i=0;i<Height;i++){
+        for (int j=0;j<Width;j++){
+                if (Cells[i][j]->getChange()==true){
+                if(dynamic_cast<AliveCell*>(Cells[i][j])){ 
+                    delete Cells[i][j];
+                    Cells[i][j]=new DeadCell(i,j);
+                }else{
+                    delete Cells[i][j];
+                    Cells[i][j]=new AliveCell(i,j);
+                }}
+        }    
     }
 }
