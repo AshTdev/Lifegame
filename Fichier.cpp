@@ -12,12 +12,12 @@
 using namespace std;
 
 
-GameOfLife::GameOfLife(const string& filename) {
-    readFile(filename);
+GameOfLife::GameOfLife(const string& nom_fichier) {
+    readFile(nom_fichier);
 }
 
-void GameOfLife::readFile(const string& filename) {
-    ifstream file(filename);
+void GameOfLife::readFile(const string& nom_fichier) {
+    ifstream file(nom_fichier);
     if (!file.is_open()) {
         throw runtime_error("Could not open file");
     }
