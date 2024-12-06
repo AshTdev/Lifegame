@@ -9,14 +9,14 @@ using namespace std;
 
 class GameOfLife {
 public:
-    GameOfLife(const string& filename);
+    GameOfLife(const string& nom_fichier);
     void printMatrix() const;
 
 private:
     int height;
     int width;
     vector<vector<Cell*>> matrix;
-    void readFile(const string& filename);
+    void readFile(const string& nom_fichier);
 };
 
 #endif 
