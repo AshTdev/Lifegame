@@ -20,5 +20,12 @@ bool DeadCell::CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int longu
             }
         }
     }
-    return aliveNeighbours == 3;
-}
+    if (aliveNeighbours == 3) {
+        return PrepareChange();
+    }
+    else
+     {
+        return false;
+    };
+
+    
