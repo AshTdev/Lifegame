@@ -1,5 +1,6 @@
 #ifndef CELL
 #define CELL
+#include <vector>
 
 class Cell{
     protected:
@@ -12,6 +13,6 @@ class Cell{
     void ChangeStatement();
     virtual bool CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int longueur, int largeur)=0;
 
-}
+};
 
 #endif
