@@ -5,10 +5,9 @@ Cell::Cell(int x, int y){
     this->y=y;
     Change=false;
 }
-bool Cell::isAlive(){
-    return Alive;
-}
-void Cell::PrepareChange(){
+
+bool Cell::PrepareChange(){
     Alive = !Alive;
+    return true;
 }
 
