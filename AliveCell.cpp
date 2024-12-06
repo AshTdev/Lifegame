@@ -1,22 +1,25 @@
-#ifndef FICHIER_H
-#define FICHIER_H
-
-#include <vector>
-#include <string>
-#include "cell.h"
-
+#include "AliveCell.h"
+#include <iostream>
 using namespace std;
 
-class GameOfLife {
-public:
-    GameOfLife(const string& nom_fichier);
-    void printMatrix() const;
+AliveCell::AliveCell(int x, int y) : Cell(x, y) {
+}
 
-private:
-    int height;
-    int width;
-    vector<vector<Cell*>> matrix;
-    void readFile(const string& nom_fichier);
-};
+bool AliveCell::CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int longueur, int largeur) {
+    cout << "Théo2" << endl;
+    int aliveNeighbours = 0;
+    for (int i = -1; i <= 1; i++) {
+        int nx = x + i;
 
-#endif 
+        for (int j = -1; j <= 1; j++) {
+            int ny = y + j;
+
+            if ((i != 0 || j != 0) && (nx >= 0 && nx < longueur) && (ny >= 0 && ny < largeur)) {
+                if (dynamic_cast<AliveCell*>(Cells[nx][ny])) {
+                    aliveNeighbours++;
+                }
+            }
+        }
+    }
+    return !(aliveNeighbours == 2 || aliveNeighbours == 3);
+}
