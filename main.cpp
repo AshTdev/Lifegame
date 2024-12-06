@@ -1,39 +1,38 @@
-// WIP
-./ma#include <SFML/Graphics.hpp>
+
+#include <SFML/Graphics.hpp>
 #include "grid.h"
+#include "AliveCell.h"
 #include <ctime>
 #include <cstdlib>
 #include <string>
+#include <iostream>
+
+ 
+
 
 using namespace std;
 
-
-vector<vector<int>> grid(gridWidth, vector<int>(gridHeight));
-
-void initializeGrid() {
-    srand(time(0));
-    for (int x = 0; x < gridWidth; ++x) {
-        for (int y = 0; y < gridHeight; ++y) {
-            grid[x][y] = rand() % 2;  // Randomly initialize cells as alive or dead
-        }
-    }
-}
-
-void renderGrid(sf::RenderWindow &window) {
+void renderGrid(sf::RenderWindow &window, Grid grille, int cellSize) {
     int x, y;
     
     window.clear();
     sf::RectangleShape cell(sf::Vector2f(cellSize - 1.0f, cellSize - 1.0f));
-    for (x = 0; x < gridWidth; ++x) {
-        for (y = 0; y < gridHeight; ++y) {
-            if (grid[x][y] == 1) {
+    for (x = 0; x < grille.getWidth(); ++x) {
+        for (y = 0; y < grille.getHeight(); ++y) {
+            if (dynamic_cast<AliveCell*>(grille.getCells()[x][y])) {
                 cell.setPosition(x * cellSize, y * cellSize);
+                cell.setFillColor(sf::Color::White);
+                window.draw(cell);
+            }
+            else{
+                cell.setPosition(x * cellSize, y * cellSize);
+                cell.setFillColor(sf::Color::Black);
                 window.draw(cell);
             }
         }
     }
-    window.display();
 }
+
 
 int main() {
     string nom_fichier;
@@ -57,31 +56,39 @@ int main() {
     cout <<"Nombre d'itérations : "<< endl;
     cin >> NbIterations;
     cout <<"Temps (en ms) entre les itérations : "<<endl;
+    cout << "Théo-1" << endl;
     cin >> temps;
-    Grid Grille(gridWidth, gridHeight);
+    cout << "Théo0" << endl;
+    Grid Grille(nom_fichier);
+    cout << "Théo1" << endl;
     if (choix==1){
     int cellSize;
     cout << "Taille d'une cellule : "<<endl;
-    cin << cellSize;
-    sf::RenderWindow window(sf::VideoMode(gridWidth * cellSize, gridHeight * cellSize), "Game of Life");
-    }
-    else{
-
-    }
-
-    initializeGrid();
-
+    cin >> cellSize;
+    sf::RenderWindow window(sf::VideoMode(Grille.getWidth() * cellSize, Grille.getHeight() * cellSize), "Game of Life");
+    window.clear();
+    
+    renderGrid(window, Grille, cellSize);
+    window.display();
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
+            if (NbIterations!=0){
+                Grille.Iteration();
+                renderGrid(window, Grille, cellSize);
+                NbIterations--;
+            }
+            sf::sleep(sf::milliseconds(temps));
             if (event.type == sf::Event::Closed)
                 window.close();
-        }
 
-        renderGrid(window);
+                
+                //renderGrid(window, cellSize);// 
+                }
 
-        sf::sleep(sf::milliseconds(100));
+    
     }
-
-    return 0;
+    
+    
+}
 }
