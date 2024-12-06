@@ -10,7 +10,7 @@ class Cell{
     Cell(int x, int y);
     bool PrepareChange();
     void ChangeStatement();
-    bool CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int longueur, int largeur)=0;
+    virtual bool CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int longueur, int largeur)=0;
 
 }
 
