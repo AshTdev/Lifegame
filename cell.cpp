@@ -11,3 +11,7 @@ bool Cell::PrepareChange(){
     return true;
 }
 
+bool Cell::getChange(){
+    return Change;
+}
+
