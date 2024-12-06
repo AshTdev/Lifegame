@@ -1,4 +1,5 @@
 #include "grid.h"
+#include <SFML/Graphics.hpp>
 
 Grid::Grid(int Width, int Height){
     this->Width=Width;
@@ -7,6 +8,5 @@ Grid::Grid(int Width, int Height){
 
 }
 void Grid::Initialization(){
-    
+
 }
-""
