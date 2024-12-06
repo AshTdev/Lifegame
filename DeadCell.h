@@ -1,7 +1,7 @@
 #include "cell.h"
 #include <vector>
 
-class DeadCell : Cell{
-    DeadCell(int x, int y);
+class DeadCell : public Cell{
+    public:DeadCell(int x, int y);
     bool CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int longueur, int largeur);
 };
