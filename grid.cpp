@@ -1,6 +1,7 @@
 #include "grid.h"
 #include "AliveCell.h"
 #include "DeadCell.h"
+#include <typeinfo>
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -11,7 +12,7 @@ int Grid::getWidth(){
 int Grid::getHeight(){
     return Height;
 }
-vector<vector<Cell*>> Grid::getCells(){
+vector<vector<Cell*>>& Grid::getCells(){
     return Cells;
 }
 
@@ -24,6 +25,7 @@ Grid::Grid(string nom_fichier){
     string word;
     int number;
     cout << "Théo42" << endl;
+    bool allocation=false;
     while (getline(fichier, line)){
         j=0;
         cout << "Théo43" << endl;
@@ -31,20 +33,31 @@ Grid::Grid(string nom_fichier){
         while (linestream >> word){
                 cout << "Théo44" << endl; 
                 number=stoi(word);
-                if (j==0){
-                    if (i==0){
+                if (i==0){
+                    if (j==0){
                     Width=number;}
                     else{
-                    Height=number;}
+                    Height=number;
+                    allocation=true;
+                    }
                 }
                 else{
+                if (allocation){
+                    Cells.resize(Height, vector<Cell*>(Width, nullptr));
+                    allocation=false;
+                }   
                     if(number==1){
-                        Cells[i-1].push_back(new AliveCell(i-1,j));
+                        Cells[i-1][j] = new AliveCell(i-1,j);
+                        cout << "Alive cell" << endl;
+                        cout << typeid(*Cells[i-1][j]).name() << endl;
                     }
                     else{
-                        Cells[i-1].push_back(new DeadCell(i-1,j));
+                        Cells[i-1][j] = new DeadCell(i-1,j);
+                        cout << "Dead cell" << endl;
+                        cout << typeid(*Cells[i-1][j]).name() << endl;
                     }
-                }                 cout << "Théo45" << endl;
+                }
+              cout << "Théo45" << endl;
             j++;
 
         }i++;
