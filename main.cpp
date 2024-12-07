@@ -12,25 +12,30 @@
 
 using namespace std;
 
-void renderGrid(sf::RenderWindow &window, Grid grille, int cellSize) {
+void renderGrid(sf::RenderWindow &window, Grid &grille, int cellSize) {
+    cout << "Théotgrand" << endl;
     int x, y;
-    
+    auto& cells = grille.getCells();
     window.clear();
     sf::RectangleShape cell(sf::Vector2f(cellSize - 1.0f, cellSize - 1.0f));
     for (x = 0; x < grille.getWidth(); ++x) {
+        cout << "Thébo" << endl;
         for (y = 0; y < grille.getHeight(); ++y) {
-            if (dynamic_cast<AliveCell*>(grille.getCells()[x][y])) {
+            
+            if (dynamic_cast<AliveCell*>(cells[x][y])) {
+                cout << "Alive Cell Detected" << endl;
                 cell.setPosition(x * cellSize, y * cellSize);
                 cell.setFillColor(sf::Color::White);
                 window.draw(cell);
             }
             else{
+                cout << "Dead Cell Detected" << endl;
                 cell.setPosition(x * cellSize, y * cellSize);
                 cell.setFillColor(sf::Color::Black);
                 window.draw(cell);
             }
         }
-    }
+    }cout << "Théotoilet" << endl;
 }
 
 
@@ -70,6 +75,7 @@ int main() {
     
     renderGrid(window, Grille, cellSize);
     window.display();
+    sf::sleep(sf::milliseconds(temps));
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
