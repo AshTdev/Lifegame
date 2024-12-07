@@ -17,7 +17,7 @@ class Grid{
     public:
     int getWidth();
     int getHeight();
-    vector<vector<Cell*>> getCells();
+    vector<vector<Cell*>>& getCells();
     Grid(string nom_fichier);
     bool Iteration();
 };
