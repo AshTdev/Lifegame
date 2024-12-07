@@ -13,29 +13,29 @@
 using namespace std;
 
 void renderGrid(sf::RenderWindow &window, Grid &grille, int cellSize) {
-    cout << "Théotgrand" << endl;
+
     int x, y;
     auto& cells = grille.getCells();
     window.clear();
     sf::RectangleShape cell(sf::Vector2f(cellSize - 1.0f, cellSize - 1.0f));
-    for (x = 0; x < grille.getWidth(); ++x) {
-        cout << "Thébo" << endl;
-        for (y = 0; y < grille.getHeight(); ++y) {
+    for (y = 0; y < grille.getHeight(); ++y) {
+
+        for (x = 0; x < grille.getWidth(); ++x) {
             
-            if (dynamic_cast<AliveCell*>(cells[x][y])) {
-                cout << "Alive Cell Detected" << endl;
+            if (dynamic_cast<AliveCell*>(cells[y][x])) {
+
                 cell.setPosition(x * cellSize, y * cellSize);
                 cell.setFillColor(sf::Color::White);
                 window.draw(cell);
             }
             else{
-                cout << "Dead Cell Detected" << endl;
+
                 cell.setPosition(x * cellSize, y * cellSize);
                 cell.setFillColor(sf::Color::Black);
                 window.draw(cell);
             }
         }
-    }cout << "Théotoilet" << endl;
+    }window.display();
 }
 
 
@@ -71,10 +71,10 @@ int main() {
     cout << "Taille d'une cellule : "<<endl;
     cin >> cellSize;
     sf::RenderWindow window(sf::VideoMode(Grille.getWidth() * cellSize, Grille.getHeight() * cellSize), "Game of Life");
-    window.clear();
+
     
     renderGrid(window, Grille, cellSize);
-    window.display();
+    
     sf::sleep(sf::milliseconds(temps));
     while (window.isOpen()) {
         sf::Event event;
@@ -83,8 +83,11 @@ int main() {
                 Grille.Iteration();
                 renderGrid(window, Grille, cellSize);
                 NbIterations--;
+                sf::sleep(sf::milliseconds(temps));
             }
-            sf::sleep(sf::milliseconds(temps));
+            else{
+                window.close();
+            }
             if (event.type == sf::Event::Closed)
                 window.close();
 
