@@ -17,9 +17,15 @@ bool AliveCell::CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int long
             if ((i != 0 || j != 0) && (nx >= 0 && nx < longueur) && (ny >= 0 && ny < largeur)) {
                 if (dynamic_cast<AliveCell*>(Cells[nx][ny])) {
                     aliveNeighbours++;
+                    cout << "Voisin vivant" << endl;
                 }
             }
         }
     }
-    return !(aliveNeighbours == 2 || aliveNeighbours == 3);
+
+    if (!(aliveNeighbours == 2 || aliveNeighbours == 3)){
+        return PrepareChange();
+    } else {
+        return false;
+    }
 }
