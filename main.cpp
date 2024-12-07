@@ -79,18 +79,18 @@ int main() {
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
+        if (event.type == sf::Event::Closed){
+                window.close();
             if (NbIterations!=0){
                 Grille.Iteration();
                 renderGrid(window, Grille, cellSize);
                 NbIterations--;
                 sf::sleep(sf::milliseconds(temps));
             }
+
             else{
                 window.close();
             }
-            if (event.type == sf::Event::Closed)
-                window.close();
-
                 
                 //renderGrid(window, cellSize);// 
                 }
@@ -100,4 +100,4 @@ int main() {
     
     
 }
-}
+
