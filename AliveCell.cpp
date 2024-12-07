@@ -2,11 +2,10 @@
 #include <iostream>
 using namespace std;
 
-AliveCell::AliveCell(int x, int y) : Cell(x, y) {
+AliveCell::AliveCell(int x, int y, bool Obstacle) : Cell(x, y, Obstacle) {
 }
 
 bool AliveCell::CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int longueur, int largeur) {
-    cout << "Théo2" << endl;
     int aliveNeighbours = 0;
     for (int i = -1; i <= 1; i++) {
         int nx = x + i;
@@ -17,7 +16,6 @@ bool AliveCell::CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int long
             if ((i != 0 || j != 0) && (nx >= 0 && nx < longueur) && (ny >= 0 && ny < largeur)) {
                 if (dynamic_cast<AliveCell*>(Cells[nx][ny])) {
                     aliveNeighbours++;
-                    cout << "Voisin vivant" << endl;
                 }
             }
         }
