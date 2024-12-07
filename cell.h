@@ -8,8 +8,11 @@ class Cell{
     int x;
     int y;
     bool Change;
+    bool Obstacle;
+    
     public:
-    Cell(int x, int y);
+    Cell(int x, int y, bool Obstacle);
+    bool getObstacle();
     bool getChange();
     bool PrepareChange();
     void ChangeStatement();
