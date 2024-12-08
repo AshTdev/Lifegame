@@ -74,7 +74,7 @@ Lorsqu'on envoie le fichier, le programme demande à l'utilisateur de faire le c
   <img src="https://github.com/user-attachments/assets/4bbc5515-5c11-48ca-8ba9-2b40fa3003cc" alt="Mode Console">
 </p>
 
-Exemple : 5 Itérations demandés --> 5 fichiers logs produits
+Exemple : 5 Itérations demandées --> 5 fichiers logs produits
 ----------
 
 ### Mode Graphique (bibliothèque SFML)
