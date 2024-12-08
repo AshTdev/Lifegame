@@ -122,10 +122,18 @@ int main() {
     int choix;
     cout << "Mode console (0) ou graphique (1) ?" << endl;
     cin >> choix;
+    if (choix != 0 && choix != 1) {
+        cerr << "Erreur : Choix invalide." << endl;
+        return 1;
+    }
     int NbIterations;
 
-    cout << "Nombre d'itérations : " << endl;
+    cout << "Nombre d'itérations (minimum 1) : " << endl;
     cin >> NbIterations;
+    if (NbIterations < 1){
+        cerr << "Erreur : Le nombre d'itération doit être plus élevé que 0." << endl;
+        return 1;
+    }
 
 
     Grid Grille(nom_fichier);
@@ -134,9 +142,17 @@ int main() {
         int temps;
         cout << "Temps (en ms) entre les itérations : " << endl;
         cin >> temps;
+        if (temps < 0){
+            cerr << "Erreur : Le temps doit être positif." << endl;
+            return 1;
+        }
         int cellSize;
-        cout << "Taille d'une cellule : " << endl;
+        cout << "Taille d'une cellule (minimum 2) : " << endl;
         cin >> cellSize;
+        if (cellSize < 2){
+            cerr << "Erreur : La taille d'une cellule doit être plus élevé que 1." << endl;
+            return 1;
+        }
         sf::RenderWindow window(sf::VideoMode(Grille.getWidth() * cellSize, Grille.getHeight() * cellSize), "Game of Life");
         renderGrid(window, Grille, cellSize);
 
@@ -165,7 +181,7 @@ int main() {
             }
             
         }
-    } else if (choix == 0) {
+    } else {
         string folder = createfolder();
         int etape=0;
         while (etape < NbIterations) {
@@ -180,8 +196,4 @@ int main() {
             }
         }
     }
-    else {
-        cerr << "Erreur : Choix invalide." << endl;
-    }
-    return 0;
 }
