@@ -143,7 +143,7 @@ Notre programme contient quatre classes, quatre fichiers c++ ainsi que le main.c
    ```bash
    cd chemin/vers/le/dossier 
 3 **Compiler le jeu**
-- Lorsque vous serez dans le dossier contenant le programme, compiler le script grace à cette commande dans le terminal :
+- Lorsque vous serez dans le dossier contenant le programme, compilez le script grace à cette commande dans le terminal :
 ```bash
 g++ -o main main.cpp AliveCell.cpp DeadCell.cpp cell.cpp grid.cpp -lsfml-graphics -lsfml-window -lsfml-system
 ```
