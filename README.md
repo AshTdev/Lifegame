@@ -1,7 +1,7 @@
 # ❗"Lifegame" - Projet POO en C++ ❗
 
 ## 🧑🏻‍🦰👨🏻 **Binôme**
-Ce projet a été réalisé en binôme ( Yanis B. | Antoine R.) dans un cadre scolaire (CESI - Ecole d'Ingenieurs | Bloc Conception & Programmation Objet)
+Ce projet a été réalisé en binôme ( Yanis B. | Virgil G.) dans un cadre scolaire (CESI - Ecole d'Ingenieurs | Bloc Conception & Programmation Objet)
 
 ## 📜 **Sommaire**
 
