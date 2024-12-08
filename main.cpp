@@ -123,22 +123,23 @@ int main() {
     cout << "Mode console (0) ou graphique (1) ?" << endl;
     cin >> choix;
     int NbIterations;
-    int temps;
+
     cout << "Nombre d'itérations : " << endl;
     cin >> NbIterations;
-    cout << "Temps (en ms) entre les itérations : " << endl;
-    cin >> temps;
+
 
     Grid Grille(nom_fichier);
 
     if (choix == 1) {
+        int temps;
+        cout << "Temps (en ms) entre les itérations : " << endl;
+        cin >> temps;
         int cellSize;
         cout << "Taille d'une cellule : " << endl;
         cin >> cellSize;
         sf::RenderWindow window(sf::VideoMode(Grille.getWidth() * cellSize, Grille.getHeight() * cellSize), "Game of Life");
+        renderGrid(window, Grille, cellSize);
 
-        sf::Clock clock;
-        sf::Time timePerFrame = sf::milliseconds(temps);
 
         while (window.isOpen()) {
             sf::Event event;
@@ -148,24 +149,39 @@ int main() {
             }
 
             if (NbIterations > 0) {
-                sf::Time elapsed = clock.getElapsedTime();
-                if (elapsed >= timePerFrame) {
-                    Grille.Iteration();
+
+
+                    if (!Grille.Iteration()){
+                        NbIterations = 1;
+                    }
                     renderGrid(window, Grille, cellSize);
-                    clock.restart();
+
                     NbIterations--;
-                }
+                    if (NbIterations == 0){
+                        cout << "End" << endl;
+                    }
+                    sf::sleep(sf::milliseconds(temps));
+                
             }
+            
         }
-    } else (choix == 0); {
+    } else if (choix == 0) {
         string folder = createfolder();
         int etape=0;
-        for (int i = 0; i < NbIterations; ++i) {
+        while (etape < NbIterations) {
             etape++;
-            Grille.Iteration();
+            bool change = Grille.Iteration();
             createandwritefile(folder, Grille, etape);
+            if (!change){
+                        etape = NbIterations;
+                    }
+            if (etape == NbIterations){
+                        cout << "End" << endl;
+            }
         }
     }
-
+    else {
+        cerr << "Erreur : Choix invalide." << endl;
+    }
     return 0;
 }
