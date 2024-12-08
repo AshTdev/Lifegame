@@ -122,8 +122,6 @@ Notre programme contient quatre classes, quatre fichiers c++ ainsi que le main.c
 
 - ```Matrice.txt``` : Un fichier texte qui sert d'exemple, elle décrit notamment les dimensions de la grille ainsi que les différentes cellules présentes + obstacles
 
-- ```Makefile``` : Script de compilation qui permet d'exécuter le programme.
-
 ## **🧭 VII/ Légende**
 
 - **1** : Correspond à une cellule **vivante** --> la couleur d'une cellule vivante est en **blanc**  
@@ -144,9 +142,14 @@ Notre programme contient quatre classes, quatre fichiers c++ ainsi que le main.c
 2. **Accédez aux fichiers** grâce à la commande `cd` :  
    ```bash
    cd chemin/vers/le/dossier 
-3 **Compiler le jeu à l'aide du makefile**
-- Grâce au makefile, il suffira simplement de taper dans votre terminal la commande "make" qui va ensuite générer un exécutable intitulé "main" :
+3 **Compiler le jeu**
+- Une fois que vous vous trouvez dans le dossier contenant le programme, compiler le script grace à cette commande dans le terminal :
+```bash
+g++ -o main main.cpp AliveCell.cpp DeadCell.cpp cell.cpp grid.cpp -lsfml-graphics -lsfml-window -lsfml-system
+```
+-Puis, une fois le code compilé, utilisez cette commande dans le même dossier :
 ```bash
 ./main
 ```
+(Note, vous pouvez remplacer le main dans ```-o main``` et ```./main``` par le nom que vous voulez si vous voulez avoir un nom de fichier différent, mais cela n'est pas nécessaire. 😉)
 4. **Enjoy!**
