@@ -36,9 +36,9 @@ Ainsi, lorsque les cellules vivantes sont placées, on lance une simulation et o
 ## **📏 II/ Règles du jeu de la vie**
 
 Une cellule possède huit voisines (2 cellules horizontales, 2 cellules verticales, 4 cellules diagonales) :
-◼️◼️◼️ 
-◼️◻️◼️ 
-◼️◼️◼️
+- ◼️◼️◼️ 
+- ◼️◻️◼️ 
+- ◼️◼️◼️
 
 A chaque itération, on définit l'état d'une cellule en fonction de l'état de ses huit cellules voisines, avec les règles suivantes :
 
