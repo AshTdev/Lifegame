@@ -1,4 +1,4 @@
-# "Lifegame" - Projet POO en C++
+# ❗"Lifegame" - Projet POO en C++ ❗
 
 ## 🧑🏻‍🦰👨🏻 **Binôme**
 Ce projet a été réalisé en binôme ( Yanis B. | Antoine R.) dans un cadre scolaire (CESI - Ecole d'Ingenieurs | Bloc Conception & Programmation Objet)
@@ -90,7 +90,7 @@ Exemple : 5 Itérations demandés --> 5 fichiers logs produits
 </p>
 
 ----------
-## 💻 IV/ L'initialisation des paramètres
+## **💻 IV/ L'initialisation des paramètres**
 
 L'utilisateur **initialise les paramètres** de la simulation :
 
@@ -101,12 +101,12 @@ L'utilisateur **initialise les paramètres** de la simulation :
 Enfin, le tour est joué ! la simulation démarre.
 ------------------
 
-## ** 📚 V/ Langages et bibliothèques**
+##  **📚 V/ Langages et bibliothèques**
 
 -  C++ standard
 -  Bibliothèque graphique "SFML" pour afficher notre jeu.
 
-## 🚧  VI/ Présentation des fonctions dans la structure de notre programme 
+## **🚧 VI/ Présentation des fonctions dans la structure de notre programme**
 
 Notre programme contient quatre classes, quatre fichiers c++ ainsi que le main.cpp :
 
@@ -124,20 +124,22 @@ Notre programme contient quatre classes, quatre fichiers c++ ainsi que le main.c
 
 - ```Makefile``` : Script de compilation qui permet d'exécuter le programme.
 
-## **Légende**
+## **🧭 VII/ Légende**
 
 - **1** : Correspond à une cellule **vivante** --> la couleur d'une cellule vivante est en **blanc**  
 - **0** : Correspond à une cellule **morte** --> la couleur d'une cellule vivante est en **noir**  
 - **3** : Correspond à un obstacle **vivant** --> la couleur de cet obstacle est en **vert**  
 - **2** : Correspond à un obstacle **mort** --> la couleur de cet obstacle est en **rouge**  
 
-## ** 🌻 VII/ Extensions présentes**
+## **🌻 VIII/ Extensions présentes**
 
 ✅ Gestion d’une grille torique. Les cellules placées aux extrémités de la grille sont adjacentes.  
+
 ✅ Introduction de cellules obstacle. L’état des cellules obstacles n’évolue pas au cours de l’exécution. Ces dernières possèdent un état vivant ou mort. Modifiez votre code, sans altérer le fonctionnement de base.  
+
 👷🔨 Placement de constructions pré-programmées sur la grille. Utiliser les touches du clavier pour intégrer de nouveaux motifs sur la grille lors de l’exécution.  
 
-## ** ✈️ VIII/ Comment lancer le jeu**
+## **✈️ IX/ Comment lancer le jeu**
 
 1. **Ouvrez votre terminal** (Sur Linux - Ubuntu)  
 2. **Accédez aux fichiers** grâce à la commande `cd` :  
