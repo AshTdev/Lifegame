@@ -95,7 +95,7 @@ L'utilisateur **initialise les paramètres** de la simulation :
 
 -  Le nombre d'itérations (1 à x) 
 -  Le temps entre chaque itération (en ms)
--  La taille d'une cellule^^
+-  La taille d'une cellule (minimum 2)
 
 Enfin, le tour est joué ! la simulation démarre.
 ------------------
@@ -105,7 +105,24 @@ Enfin, le tour est joué ! la simulation démarre.
 -  C++ standard
 -  Bibliothèque graphique "SFML" pour afficher notre jeu.
 
-## La structure de notre programme 
+## Présentation des fonctions dans la structure de notre programme 
+
+Notre programme contient quatre classes, quatre fichiers c++ ainsi que le main.cpp :
+
+main.cpp : 
+
+AliveCell.cpp :
+
+DeadCell.cpp :
+
+cell.cpp :
+
+grid.cpp:
+
+
+
+
+
 
 
 
