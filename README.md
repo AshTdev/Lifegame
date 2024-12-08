@@ -137,7 +137,6 @@ Notre programme contient quatre classes, quatre fichiers c++ ainsi que le main.c
 
 ✅ Introduction de cellules obstacle. L’état des cellules obstacles n’évolue pas au cours de l’exécution. Ces dernières possèdent un état vivant ou mort. Modifiez votre code, sans altérer le fonctionnement de base.  
 
-👷🔨 Placement de constructions pré-programmées sur la grille. Utiliser les touches du clavier pour intégrer de nouveaux motifs sur la grille lors de l’exécution.  
 
 ## **✈️ IX/ Comment lancer le jeu**
 
