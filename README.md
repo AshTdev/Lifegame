@@ -152,4 +152,5 @@ g++ -o main main.cpp AliveCell.cpp DeadCell.cpp cell.cpp grid.cpp -lsfml-graphic
 ./main
 ```
 (Note, vous pouvez remplacer le main dans ```-o main``` et ```./main``` par le nom que vous voulez si vous voulez avoir un nom de fichier différent, mais cela n'est pas nécessaire. 😉)
+
 4. **Enjoy!**
