@@ -52,6 +52,16 @@ Ensuite, l'utilisateur **initialise les paramètres** de la simulation :
 
 Enfin, le tour est joué ! la simulation démarre.
 ------------------
+
+## Légende
+
+1 : Correspond à une cellule **vivante** --> la couleur d'une cellule vivante est en **blanc**
+0 : Correspond à une cellule **morte** --> la couleur d'une cellule vivante est en **noir**
+
+3 : Correspond à un obstacle **vivant** --> la couleur de cet obstacle est en **vert**
+2 : Correpond à un obstacle **mort** --> la couleur de cet obstacle est en **rouge**
+
+
 ## Extensions présentes 
 
 ✅ Gestion d’une grille torique. Les cellules placées aux extrémités de la grille sont adjacentes.
