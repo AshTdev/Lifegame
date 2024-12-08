@@ -8,15 +8,15 @@ AliveCell::AliveCell(int x, int y, bool Obstacle) : Cell(x, y, Obstacle) {
 bool AliveCell::CheckNeighbours(std::vector<std::vector<Cell*>> &Cells, int longueur, int largeur) {
     int aliveNeighbours = 0;
     for (int i = -1; i <= 1; i++) {
-        int nx = x + i;
-
         for (int j = -1; j <= 1; j++) {
-            int ny = y + j;
-
-            if ((i != 0 || j != 0) && (nx >= 0 && nx < longueur) && (ny >= 0 && ny < largeur)) {
-                if (dynamic_cast<AliveCell*>(Cells[nx][ny])) {
+            if ((i != 0 || j != 0)) {
+                int nx = (x + j + longueur) % longueur;
+                int ny = (y + i + largeur) % largeur;
+                if (dynamic_cast<AliveCell*>(Cells[ny][nx])) {
                     aliveNeighbours++;
                 }
+            else {
+            }
             }
         }
     }
