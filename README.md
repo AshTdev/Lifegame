@@ -144,7 +144,7 @@ Notre programme contient quatre classes, quatre fichiers c++ ainsi que le main.c
 1. **Ouvrez votre terminal** (Sur Linux - Ubuntu)  
 2. **Accédez aux fichiers** grâce à la commande `cd` :  
    ```bash
-   cd chemin/vers/le/dossier :)
+   cd chemin/vers/le/dossier 
 3 **Compiler le jeu à l'aide du makefile**
 - Grâce au makefile, il suffira simplement de taper dans votre terminal la commande "make" qui va ensuite générer un exécutable intitulé "main" :
 ```bash
