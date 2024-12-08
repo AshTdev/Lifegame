@@ -1,7 +1,7 @@
 # "Lifegame" - Projet POO en C++ 
 
 ## Binôme 
-Ce projet a été réalisé en binôme ( Yanis B. | Virgil G.) dans un cadre scolaire (CESI - Ecole d'Ingenieurs)
+Ce projet a été réalisé en binôme ( Yanis B. | Virgil G.) dans un cadre scolaire (CESI - Ecole d'Ingenieurs | Bloc Conception & Programmation Objet)
 
 ## Sommaire
 
@@ -19,9 +19,6 @@ Ce projet a été réalisé en binôme ( Yanis B. | Virgil G.) dans un cadre sco
 -  V. Extensions présentes
       
 -  VI. Comment lancer le jeu
-
-
-
 
 ----------------------
 ##  **I/ Introduction du jeu de la vie**
@@ -52,10 +49,6 @@ A chaque itération, on définit l'état d'une cellule en fonction de l'état de
  ![image](https://github.com/user-attachments/assets/a8637444-208c-466c-8484-63e368080606)
 
 --------------------
-## **III/ Langages et bibliothèques**
-
--  C++ standard
--  Bibliothèque graphique "SFML" pour afficher notre jeu.^^
 
 ## **IV/ Fonctionnalités du programme**
 
@@ -89,33 +82,32 @@ Exemple : 5 Itérations demandés --> 5 fichiers logs produits
 -  L'utilisateur initialise les paramètres.
 -  Le programme utilise la bibliothèque SFML afin de représenter en direct l'évolution de la simulation.
 -  La simulation s'arrête lorsque le nombre d'itérations a été atteint ou lorsqu'il n'y a plus d'évolution possible des cellules.
-
+<p align="center">
+      
 ![image](https://github.com/user-attachments/assets/2413162c-b371-4722-b7dd-43a7a410892b)
 
+</p>
 
 ----------
+## L'initialisation des paramètres
 
+L'utilisateur **initialise les paramètres** de la simulation :
 
-
-
-
-
-
-
-
-
-
-
-
-
-Ensuite, l'utilisateur **initialise les paramètres** de la simulation :
-
--  Le nombre d'itérations
--  Le temps entre chaque itération
--  La taille d'une cellule
+-  Le nombre d'itérations (1 à x) 
+-  Le temps entre chaque itération (en ms)
+-  La taille d'une cellule^^
 
 Enfin, le tour est joué ! la simulation démarre.
 ------------------
+
+## **III/ Langages et bibliothèques**
+
+-  C++ standard
+-  Bibliothèque graphique "SFML" pour afficher notre jeu.
+
+## La structure de notre programme 
+
+
 
 ## **Légende**
 
