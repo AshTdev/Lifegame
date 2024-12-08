@@ -42,16 +42,16 @@ Grid::Grid(string nom_fichier){
                     allocation=false;
                 }   
                     if(number==1){
-                        Cells[i-1][j] = new AliveCell(i-1,j, false);
+                        Cells[i-1][j] = new AliveCell(j,i-1, false);
                     }
                     else if(number==0){
-                        Cells[i-1][j] = new DeadCell(i-1,j, false);
+                        Cells[i-1][j] = new DeadCell(j,i-1, false);
                     }
                     else if(number==2){
-                        Cells[i-1][j] = new DeadCell(i-1,j, true);
+                        Cells[i-1][j] = new DeadCell(j,i-1, true);
                     }
                     else if(number==3){
-                        Cells[i-1][j] = new AliveCell(i-1,j, true);
+                        Cells[i-1][j] = new AliveCell(j,i-1, true);
                     }
                 }
             j++;
@@ -60,23 +60,32 @@ Grid::Grid(string nom_fichier){
     }
 }
 bool Grid::Iteration(){
+    bool change=false;
     for(int i=0;i<Height;i++){
         for (int j=0;j<Width;j++){
-            if (!(Cells[i][j]->getObstacle())){
+            if (!Cells[i][j]->getObstacle()){
                 Cells[i][j]->CheckNeighbours(Cells, Width, Height);
         }}}
+
     for(int i=0;i<Height;i++){
         for (int j=0;j<Width;j++){
                 if (Cells[i][j]->getChange()==true){
                     if(dynamic_cast<AliveCell*>(Cells[i][j])){ 
                     delete Cells[i][j];
-                    Cells[i][j]=new DeadCell(i,j,false);
+                    Cells[i][j]=new DeadCell(j,i,false);
+                    if (!change){
+                        change=true;
+                    }
+
                 }else{
                     delete Cells[i][j];
-                    Cells[i][j]=new AliveCell(i,j,false);
+                    Cells[i][j]=new AliveCell(j,i,false);
+                    if (!change){
+                        change=true;
+                    }
                 }
             }
         }    
     }
-    return true;
+    return change;
 } 
