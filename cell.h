@@ -12,7 +12,7 @@ protected:
 
 public:
 
-    Cell(int x, int y, bool Obstacle)   // Constructeur 
+    Cell(int x, int y, bool Obstacle);   // Constructeur 
     bool getObstacle();  // Return si la cellule est un obstacle
     bool getChange(); // Return si la cellule est marquée pour changement
     bool PrepareChange(); 
