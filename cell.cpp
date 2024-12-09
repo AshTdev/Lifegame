@@ -1,22 +1,25 @@
 #include "cell.h"
 
-Cell::Cell(int x, int y, bool Obstacle){
-    this->x=x;
-    this->y=y;
-    Change=false;
-    this->Obstacle=Obstacle;
-    
+// Constructeur 
+Cell::Cell(int x, int y, bool Obstacle) {
+    this->x = x; // On initialise la coordonnée X
+    this->y = y; // On iniitialise la coordonnée Y
+    Change = false; // On initialise l'état de change à false
+    this->Obstacle = Obstacle; // On initialise l'état "Obstacle"
 }
 
-bool Cell::PrepareChange(){
-    Change = true;
+// Prépare la cellule pour un changement d'état
+bool Cell::PrepareChange() {
+    Change = true; // Marque la cellule pour changement
     return true;
 }
 
-bool Cell::getObstacle(){
+// Return si la cellule est un obstacle
+bool Cell::getObstacle() {
     return Obstacle;
 }
 
-bool Cell::getChange(){
+// Return si la cellule est marquée pour changement
+bool Cell::getChange() {
     return Change;
 }
