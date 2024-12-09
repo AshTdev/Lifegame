@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-// Constructeur d
+// Constructeur DeadCell
 DeadCell::DeadCell(int x, int y, bool Obstacle) : Cell(x, y, Obstacle) {
     // Appelle le constructeur "Cell"
 }
